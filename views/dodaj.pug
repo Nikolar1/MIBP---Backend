@@ -2,7 +2,7 @@ extends layout
 
 block content
   h1 #{title}
-  form(method='POST', action='/articles/add')
+  form(method='POST', action='/profesori/dodaj')
     #form-group
       label Ime:
       input.form-control(name='ime', type='text')
@@ -12,6 +12,6 @@ block content
     #form-group
       label Mesto boravka:
       input.form-control(name='Mestoboravka', type='text')
-    input.btn.btn-primary(type='submit',value='Submit')
+    input.btn.btn-primary(type='submit',value='Posalji')
         
         

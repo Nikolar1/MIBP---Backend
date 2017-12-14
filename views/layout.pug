@@ -2,9 +2,43 @@ doctype html
 html
   head
     title Oceni profesora
+    link(rel='stylesheet' href='/bower_components/bootstrap/dist/css/bootstrap.css')
   body
-    block content
-    br
-    hr
-    footer
-      Autor Nikola Radojcic
+    
+    nav.navbar.navbar-inverse
+      .container
+        .navbar-header
+          button.navbar-toggle.collapsed(type='button', data-toggle='collapse', data-target='#navbar', aria-expanded='false', aria-controls='navbar')
+            span.sr-only Toggle navigation
+            span.icon-bar
+            span.icon-bar
+            span.icon-bar
+          a.navbar-brand(href='/') Oceni Profesora
+        #navbar.collapse.navbar-collapse
+          ul.nav.navbar-nav
+            li
+              a(href='/') Pocetna
+            li
+              a(href='/profesori/dodaj') Dodaj profesora
+          //  if user
+              li
+                a(href='/profesori/dodaj') Dodaj profesora
+          ul.nav.navbar-nav.navbar-right
+            if user
+              li 
+                a(href='/korisnici/odjava') Odjavi se
+            else
+              li
+                a(href='/korisnici/upis') Upisi se
+              li
+                a(href='/korisnici/prijava') Prijavi se
+    
+    
+    .container
+      block content
+      br
+      hr
+      footer
+        Autor Nikola Radojcic
+    script(src='/bower_components/bootstrap/dist/js/bootstrap.js')
+    script(src='/bower_components/jquery/dist/jquery.js')

@@ -2,6 +2,7 @@ extends layout
 
 block content
     h1 #{title}
-    ul
+    ul.list-group
       each profesor, i in profesori
-        li= profesor.ime
+        li.list-group-item
+          a(href="/profesori/"+profesor._id)=profesor.ime+' '+profesor.prezime

@@ -1,0 +1,12 @@
+extends layout
+
+block content
+    h1= (nadjprofesor.ime+' '+nadjprofesor.prezime)
+    h5 Mesto boravka: #{nadjprofesor.Mestoboravka}
+    h5 Likes: #{nadjprofesor.likes}
+    h5 Dislikes: #{nadjprofesor.dislikes}
+    ul.list-group
+      each komentar, i in nadjprofesor.komentari
+        li.list-group-item
+          h5 Autor: #{komentar.autor}
+          p = komentar.tekst
