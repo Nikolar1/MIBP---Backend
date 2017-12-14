@@ -1,0 +1,21 @@
+extends layout
+
+block content
+  h1 #{title}
+  form(method='POST', action='/profesori/edit/'+nadjprofesor._id)
+    #form-group
+      label Ime:
+      input.form-control(name='ime', type='text', value=nadjprofesor.ime)
+    #form-group
+      label Prezime:
+      input.form-control(name='prezime', type='text' value=nadjprofesor.prezime)
+    #form-group
+      label Mesto boravka:
+      input.form-control(name='Mestoboravka', type='text' value=nadjprofesor.Mestoboravka)
+    #form-group
+      label Ocena:
+      input.form-control(name='ocena', type='Number' value=nadjprofesor.ocena)
+    br
+    input.btn.btn-primary(type='submit',value='Posalji')
+        
+        

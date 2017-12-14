@@ -1,0 +1,12 @@
+extends layout
+
+block content
+  h1 #{title}
+  form(method='POST', action='/profesori/komentar/:id')
+    #form-group
+      label Autor:
+      input.form-control(name='autor', type='text')
+    #form-group
+      label Tekst:
+      textarea.form-control(name='text')
+    input.btn.btn-primary(type='submit',value='Komentarisi')
