@@ -1,7 +1,6 @@
 var mongoose = require('mongoose');
-var Schema = mongoose.Schema;
 
-var Sema = new Schema({
+var Sema = mongoose.Schema({
     ime : {
         type : String,
         required : true
@@ -13,6 +12,10 @@ var Sema = new Schema({
     Mestoboravka : {
         type : String,
         required : true
+    },
+    ocena : {
+      type : Number,
+      required : true
     },
     komentari : [
       {
@@ -38,7 +41,6 @@ var Sema = new Schema({
       type : Number,
       min : 0
     }
-}, {collection: 'profesori'});
+}, {collection: 'Profesori'});
 
-var profesori = mongoose.model('profesori', Sema);
-module.exports = profesori;
+var profesori = module.exports = mongoose.model('Profesori', Sema);

@@ -5,8 +5,19 @@ block content
     h5 Mesto boravka: #{nadjprofesor.Mestoboravka}
     h5 Likes: #{nadjprofesor.likes}
     h5 Dislikes: #{nadjprofesor.dislikes}
+    h5 Ocena: #{nadjprofesor.ocena}
+    hr
+    a.btn.btn-default(href='/profesori/komentar/'+nadjprofesor._id) Komentarisi
+    a.btn.btn-default(href='/profesori/edit/'+nadjprofesor._id) Edit
+    a.btn.btn-default(href='/profesori/oceni/'+nadjprofesor._id) Oceni
+    a.btn.btn-default(href='/profesori/like/'+nadjprofesor._id) Like
+    a.btn.btn-default(href='/profesori/dislike/'+nadjprofesor._id) Dislike
+    hr
+    a.btn.btn-danger.delete-profesor(href='#', data-id = nadjprofesor._id) Obrisi
+    hr
     ul.list-group
       each komentar, i in nadjprofesor.komentari
         li.list-group-item
           h5 Autor: #{komentar.autor}
           p = komentar.tekst
+    
