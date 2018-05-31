@@ -10,8 +10,7 @@ block content
     a.btn.btn-default(href='/profesori/komentar/'+nadjprofesor._id) Komentarisi
     a.btn.btn-default(href='/profesori/edit/'+nadjprofesor._id) Edit
     a.btn.btn-default(href='/profesori/oceni/'+nadjprofesor._id) Oceni
-    a.btn.btn-default(href='/profesori/like/'+nadjprofesor._id) Like
-    a.btn.btn-default(href='/profesori/dislike/'+nadjprofesor._id) Dislike
+    a.btn.btn-default(href='/sortiraj/'+nadjprofesor._id) Sortiraj
     hr
     a.btn.btn-danger.delete-profesor(href='#', data-id = nadjprofesor._id) Obrisi
     hr
@@ -19,7 +18,10 @@ block content
       each komentar, i in nadjprofesor.komentari
         li.list-group-item
           h5 Autor: #{komentar.autor}
-          p = komentar.tekst
-          a.btn.btn-default(href='/profesori/like/'+nadjprofesor._id +'/' + i) Like
-          a.btn.btn-default(href='/profesori/dislike/'+nadjprofesor._id + '/' + i) Dislike
+          p Tekst: #{komentar.tekst}
+          p Likes #{komentar.likes}  Dislikes #{komentar.dislikes}
+          form(method='POST', action='/profesori/like/'+nadjprofesor._id +'/' + i)
+            input.btn.btn-primary(type='submit',value='Like')
+          form(method='POST', action='/profesori/dislike/'+nadjprofesor._id + '/' + i)
+            input.btn.btn-primary(type='submit',value='Dislike')
     

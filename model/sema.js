@@ -21,11 +21,9 @@ var Sema = mongoose.Schema({
             {
               autor : {
                 type : String,
-                required : true
               },
               tekst : {
                 type : String,
-                required : true
               },
               likes : {
                 type : Number,
