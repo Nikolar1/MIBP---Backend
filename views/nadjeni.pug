@@ -20,4 +20,6 @@ block content
         li.list-group-item
           h5 Autor: #{komentar.autor}
           p = komentar.tekst
+          a.btn.btn-default(href='/profesori/like/'+nadjprofesor._id +'/' + i) Like
+          a.btn.btn-default(href='/profesori/dislike/'+nadjprofesor._id + '/' + i) Dislike
     

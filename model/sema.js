@@ -18,8 +18,6 @@ var Sema = mongoose.Schema({
       required : true
     },
     komentari : [
-      {
-          komentar : [
             {
               autor : {
                 type : String,
@@ -28,19 +26,18 @@ var Sema = mongoose.Schema({
               tekst : {
                 type : String,
                 required : true
+              },
+              likes : {
+                type : Number,
+                min : 0
+              },
+              dislikes : {
+                type : Number,
+                min : 0
               }
             }
-          ]
-      }
-    ],
-    likes : {
-      type : Number,
-      min : 0
-    },
-    dislikes : {
-      type : Number,
-      min : 0
-    }
+
+    ]
 }, {collection: 'Profesori'});
 
 var profesori = module.exports = mongoose.model('Profesori', Sema);

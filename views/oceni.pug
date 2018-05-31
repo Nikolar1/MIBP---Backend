@@ -1,0 +1,10 @@
+extends layout
+
+block content
+  h1 #{title}
+  form(method='POST', action='/profesori/oceni/'+nadjprofesor._id)
+    #form-group
+      label Ocena:
+      input.form-control(name='ocena', type='Number')
+    br
+    input.btn.btn-primary(type='submit',value='Posalji')
